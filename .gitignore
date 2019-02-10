@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/coinmarketcap-d-api
+coinmarketcap-d-api.so
+coinmarketcap-d-api.dylib
+coinmarketcap-d-api.dll
+coinmarketcap-d-api.a
+coinmarketcap-d-api.lib
+coinmarketcap-d-api-test-*
+*.exe
+*.o
+*.obj
+*.lst

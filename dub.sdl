@@ -1,0 +1,5 @@
+name "coinmarketcap-d-api"
+description "Dlang wrapper around the https://coinmarketcap.com API"
+authors "DarkRiDDeR"
+copyright "Copyright © 2019, DarkRiDDeR"
+license "Apache-2.0"
