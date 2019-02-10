@@ -1,5 +1,8 @@
 # Coinmarketcap D API
 
+[![](https://img.shields.io/dub/v/coinmarketcap-d-api.svg?style=flat)](https://code.dlang.org/packages/coinmarketcap-d-api)
+[![](https://img.shields.io/github/license/DarkRiDDeR/coinmarketcap-d-api.svg?style=flat)](https://github.com/DarkRiDDeR/coinmarketcap-d-api/blob/master/LICENSE)
+
 Dlang wrapper around the https://coinmarketcap.com API
 
 ## Install
