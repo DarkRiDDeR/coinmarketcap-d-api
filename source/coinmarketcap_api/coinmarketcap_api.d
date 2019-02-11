@@ -11,10 +11,9 @@ class CoinmarketcapAPI {
     protected:
     const string BASE_URL = "https://pro-api.coinmarketcap.com";
     HTTP client;
-    UnCompress decompressor;
     string url;
     string versionApi;
-    string _version = "0.1.0";
+    string _version = "0.1.1";
 
     
     public:
@@ -22,14 +21,13 @@ class CoinmarketcapAPI {
     this (in string apiKey, in string versionApi = "v1") {
         this.versionApi = versionApi;
         this.url = BASE_URL ~ "/" ~ versionApi ~ "/";
-        this.decompressor = new UnCompress();
 
         this.client = HTTP();
         client.method = HTTP.Method.get;
         client.addRequestHeader("X-CMC_PRO_API_KEY", apiKey);
         client.addRequestHeader("Accept", "application/json");
         client.addRequestHeader("Accept-Charset", "UTF-8");
-        //client.addRequestHeader("Accept-Encoding", "deflate, gzip");
+        client.addRequestHeader("Accept-Encoding", "deflate, gzip");
         client.addRequestHeader("User-Agent", "coinmarketcap-d-api/"~this._version);
     }
 
@@ -207,8 +205,9 @@ class CoinmarketcapAPI {
     }
     
     T request (T = string)(in string method, in string param = "") {
-        ubyte[] result;
         bool isGzip = false;
+        ubyte[] result = [];
+        UnCompress decompressor = new UnCompress;
 
         if (param == "") client.url = this.url ~ method;
         else client.url = this.url ~ method ~ "?" ~ param;
